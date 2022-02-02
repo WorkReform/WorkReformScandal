@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://workreformscandal.com/xfp_min/xfp-general.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>xfp - 📣general</title>
+    
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-300.woff);
+            font-weight: 300;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-400.woff);
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-500.woff);
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-600.woff);
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-700.woff);
+            font-weight: 700;
+        }
+
+        body {
+            background-color: #36393e;
+            color: #dcddde;
+            font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        a {
+            color: #00aff4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+        .markdown {
+            max-width: 100%;
+            line-height: 1.3;
+            overflow-wrap: break-word;
+        }
+
+        .preserve-whitespace {
+            white-space: pre-wrap;
+        }
+
+        .spoiler-text {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .spoiler-text--hidden {
+            cursor: pointer;
+            background-color: #202225;
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .spoiler-text--hidden:hover {
+            background-color: rgba(32, 34, 37, 0.8);
+        }
+
+        .spoiler-text--hidden::selection {
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .quote {
+            display: flex;
+            margin: 0.05em 0;
+        }
+
+        .quote::before {
+            content: "";
+            margin-right: 0.5em;
+            border: 2px solid #4f545c;
+            border-radius: 3px;
+        }
+
+        .pre {
+            background-color: #2f3136;
+            font-family: "Consolas", "Courier New", Courier, monospace;
+        }
+
+        .pre--multiline {
+            margin-top: 0.25em;
+            padding: 0.5em;
+            border: 2px solid #282b30;
+            border-radius: 5px;
+            color: #b9bbbe;
+        }
+
+        .pre--multiline.hljs {
+            background-color: #2f3136;
+            color: #b9bbbe;
+        }
+
+        .pre--inline {
+            padding: 2px;
+            border-radius: 3px;
+            font-size: 0.85em;
+        }
+
+        .mention {
+            border-radius: 3px;
+            padding: 0 2px;
+            color: #dee0fc;
+            background-color: rgba(88, 101, 242, .3);
+            font-weight: 500;
+        }
+
+        .mention:hover {
+            background-color: #5865f2;
+            color: #ffffff
+        }
+
+        .timestamp {
+            border-radius: 3px;
+            padding: 0 2px;
+            background-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .emoji {
+            width: 1.325em;
+            height: 1.325em;
+            margin: 0 0.06em;
+            vertical-align: -0.4em;
+        }
+
+        .emoji--small {
+            width: 1em;
+            height: 1em;
+        }
+
+        .emoji--large {
+            width: 2.8em;
+            height: 2.8em;
+        }
+
+        .preamble {
+            display: grid;
+            margin: 0 0.3em 0.6em 0.3em;
+            max-width: 100%;
+            grid-template-columns: auto 1fr;
+        }
+
+        .preamble__guild-icon-container {
+            grid-column: 1;
+        }
+
+        .preamble__guild-icon {
+            max-width: 88px;
+            max-height: 88px;
+        }
+
+        .preamble__entries-container {
+            grid-column: 2;
+            margin-left: 0.6em;
+        }
+
+        .preamble__entry {
+            font-size: 1.4em;
+            color: #ffffff;
+        }
+
+        .preamble__entry--small {
+            font-size: 1em;
+        }
+
+        .chatlog {
+            max-width: 100%;
+        }
+
+        .chatlog__message-group {
+            display: grid;
+            margin: 0 0.6em;
+            padding: 0.9em 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            grid-template-columns: auto 1fr;
+        }
+
+        .chatlog__reference-symbol {
+            grid-column: 1;
+            margin: 8px 4px 4px 18px;
+            border-left: 2px solid #4f545c;
+            border-top: 2px solid #4f545c;
+            border-radius: 8px 0 0 0;
+        }
+
+        .chatlog__reference {
+            display: flex;
+            grid-column: 2;
+            margin-bottom: 0.25em;
+            font-size: 0.875em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            align-items: center;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-avatar {
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            margin-right: 0.25em;
+        }
+
+        .chatlog__reference-name {
+            margin-right: 0.3em;
+            font-weight: 600;
+        }
+
+        .chatlog__reference-content {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__reference-content a:hover {
+            text-decoration: none;
+        }
+
+        .chatlog__reference-link {
+            cursor: pointer;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-link * {
+            display: inline;
+            pointer-events: none;
+        }
+
+        .chatlog__reference-link:hover {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-link:hover *:not(.spoiler-text) {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-edited-timestamp {
+            margin-left: 0.25em;
+            font-size: 0.8em;
+            unicode-bidi: bidi-override;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__author-avatar-container {
+            grid-column: 1;
+            width: 40px;
+            height: 40px;
+            margin-right: 16px;
+        }
+
+        .chatlog__author-avatar {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .chatlog__messages {
+            grid-column: 2;
+            min-width: 50%;
+            direction: ltr;
+        }
+
+        .chatlog__author-name {
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .chatlog__timestamp {
+            margin-left: 0.3em;
+            font-size: 0.75em;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__message {
+            padding: 0.1em 0.3em;
+            margin: 0 -0.3em;
+            background-color: transparent;
+            transition: background-color 1s ease;
+        }
+
+        .chatlog__message--highlighted {
+            background-color: rgba(114, 137, 218, 0.2);
+        }
+
+        .chatlog__message--pinned {
+            background-color: rgba(249, 168, 37, 0.05);
+        }
+
+        .chatlog__content {
+            font-size: 0.95em;
+            word-wrap: break-word;
+        }
+
+        .chatlog__edited-timestamp {
+            margin-left: 0.15em;
+            font-size: 0.8em;
+        }
+
+        .chatlog__attachment {
+            display: inline-block;
+            position: relative;
+            margin-top: 0.3em;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden {
+            cursor: pointer;
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .chatlog__attachment--hidden * {
+            pointer-events: none;
+        }
+
+        .chatlog__attachment-spoiler-caption {
+            display: none;
+            z-index: 999;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0.4em 0.8em;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 20px;
+            color: #dcddde;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-spoiler-caption {
+            display: block;
+        }
+
+        .chatlog__attachment--hidden:hover .chatlog__attachment-spoiler-caption {
+            color: #fff;
+        }
+
+        .chatlog__attachment-media {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-media {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic {
+            width: 100%;
+            max-width: 520px;
+            height: 40px;
+            padding: 10px;
+            background-color: #2f3136;
+            border: 1px solid #292b2f;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-generic {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic-icon {
+            float: left;
+            width: 30px;
+            height: 100%;
+            margin-right: 10px;
+        }
+
+        .chatlog__attachment-generic-size {
+            color: #72767d;
+            font-size: 12px;
+        }
+
+        .chatlog__attachment-generic-name {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__edited-timestamp {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__embed {
+            display: flex;
+            margin-top: 0.3em;
+            max-width: 520px;
+        }
+
+        .chatlog__embed-color-pill {
+            flex-shrink: 0;
+            width: 0.25em;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        .chatlog__embed-color-pill--default {
+            background-color: #202225;
+        }
+
+        .chatlog__embed-content-container {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5em 0.6em;
+            background-color: rgba(46, 48, 54, 0.3);
+            border: 1px solid rgba(46, 48, 54, 0.6);
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        .chatlog__embed-content {
+            display: flex;
+            width: 100%;
+        }
+
+        .chatlog__embed-text {
+            flex: 1;
+        }
+
+        .chatlog__embed-author {
+            display: flex;
+            margin-bottom: 0.3em;
+            align-items: center;
+        }
+
+        .chatlog__embed-author-icon {
+            margin-right: 0.5em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .chatlog__embed-author-name {
+            font-size: 0.875em;
+            font-weight: 600;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+            color: #ffffff
+        }
+
+        .chatlog__embed-author-name-link {
+            color: #ffffff;
+        }
+
+        .chatlog__embed-title {
+            margin-bottom: 0.2em;
+            font-size: 0.875em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-description {
+            font-weight: 500;
+            font-size: 0.85em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-fields {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 0.5em;
+        }
+
+        .chatlog__embed-field {
+            flex: 0;
+            min-width: 100%;
+            max-width: 506px;
+            padding-top: 0.6em;
+            font-size: 0.875em;
+        }
+
+        .chatlog__embed-field--inline {
+            flex: 1;
+            flex-basis: auto;
+            min-width: 150px;
+        }
+
+        .chatlog__embed-field-name {
+            margin-bottom: 0.2em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-field-value {
+            font-weight: 500;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-thumbnail {
+            flex: 0;
+            margin-left: 1.2em;
+            max-width: 80px;
+            max-height: 80px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-image-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-image {
+            max-width: 500px;
+            max-height: 400px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-footer {
+            margin-top: 0.6em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-footer-icon {
+            margin-right: 0.2em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .chatlog__embed-footer-text {
+            vertical-align: middle;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+
+        .chatlog__embed-plainimage {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-spotify {
+            border: 0;
+        }
+
+        .chatlog__embed-youtube-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-youtube {
+            border: 0;
+            border-radius: 3px;
+        }
+
+        .chatlog__reactions {
+            display: flex;
+        }
+
+        .chatlog__reaction {
+            display: flex;
+            align-items: center;
+            margin: 0.35em 0.1em 0.1em 0;
+            padding: .125rem .375rem;
+            background-color: #2f3136;
+            border-radius: 8px;
+            border-color: transparent;
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        .chatlog__reaction:hover {
+            border-color: hsla(0,0%,100%,.2);
+            border-width: 1px;
+            border-style: solid;
+            background-color: transparent;
+        }
+
+        .chatlog__reaction-count {
+            min-width: 9px;
+            margin-left: 0.35em;
+            font-size: 0.875em;
+            color: #b9bbbe;
+        }
+
+        .chatlog__reaction:hover .chatlog__reaction-count {
+            color: #dcddde;
+        }
+
+        .chatlog__bot-tag {
+            position: relative;
+            top: -.1em;
+            margin-left: 0.3em;
+            padding: 0.05em 0.3em;
+            border-radius: 3px;
+            line-height: 1.3;
+            background-color: #5865F2;
+            color: #ffffff;
+            font-size: 0.625em;
+            font-weight: 500;
+        }
+
+        .postamble {
+            margin: 1.4em 0.3em 0.6em 0.3em;
+            padding: 1em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .postamble__entry {
+            color: #ffffff;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./other chat_files/solarized-dark.min.css">
+    <script src="./other chat_files/highlight.min.js.download"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler-text--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler-text--hidden');
+            }
+            if (element && element.classList.contains('chatlog__attachment--hidden')) {
+                event.preventDefault();
+                element.classList.remove('chatlog__attachment--hidden');
+            }
+        }
+    </script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./other chat_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GWFD39G72J');
+</script>
+
+
+    </head><body><svg style="display: none">
+        <symbol id="icon-attachment" viewBox="0 0 720 960">
+            <path fill="#f4f5fb" d="M50,935a25,25,0,0,1-25-25V50A25,25,0,0,1,50,25H519.6L695,201.32V910a25,25,0,0,1-25,25Z"></path>
+            <path fill="#7789c4" d="M509.21,50,670,211.63V910H50V50H509.21M530,0H50A50,50,0,0,0,0,50V910a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50h0V191Z"></path>
+            <path fill="#f4f5fb" d="M530,215a25,25,0,0,1-25-25V50a25,25,0,0,1,16.23-23.41L693.41,198.77A25,25,0,0,1,670,215Z"></path>
+            <path fill="#7789c4" d="M530,70.71,649.29,190H530V70.71M530,0a50,50,0,0,0-50,50V190a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50Z"></path>
+        </symbol>
+    </svg>
+
+
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="./other chat_files/bb0e8f9735755ae7ba21af352dcc9811-FB58D.png" alt="Guild icon" loading="lazy">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">Home of Powermods</div>
+        <div class="preamble__entry">Reddit Moderation / 📣general</div>
+
+            <div class="preamble__entry preamble__entry--small">General subreddit discussion goes here.</div>
+
+    </div>
+</div>
+
+<div class="chatlog">
+<div class="chatlog__message-group">
+[REDACTED: ALL PRIOR COMMUNICATIONS, NOT RELEVANT]
+</div>
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/c10eb9beb99cb6a083850b22e96e8c21-41D6B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Not Us, Me"</span>
+
+
+        <span class="chatlog__timestamp">26-Jan-22 06:34 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted8DED6BE502755FEAB35CA7F6AE7D9ECC9CFDD922B804C7C5828D0E0A406CA50F" id="message-redacted8DED6BE502755FEAB35CA7F6AE7D9ECC9CFDD922B804C7C5828D0E0A406CA50F" title="Message sent: 26-Jan-22 06:34 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">so</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedAD632A397EDF84D48916FB804C37D18226A44177150B6646C4FB4CBA1714F248" id="message-redactedAD632A397EDF84D48916FB804C37D18226A44177150B6646C4FB4CBA1714F248" title="Message sent: 26-Jan-22 06:34 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://workreformscandal.com/xfp_min/[REDACTED%20YOUTUBE%20LINK]">[REDACTED YOUTUBE LINK]</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,0,255)"></div>
+								[REDACTED YOUTUBE EMBED]
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedA0ADD3D36BC51C9411C1B7D3721A100602CC5D8B94BA81F0805EAFDE83BE09AD" id="message-redactedA0ADD3D36BC51C9411C1B7D3721A100602CC5D8B94BA81F0805EAFDE83BE09AD" title="Message sent: 26-Jan-22 06:35 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Bad television PR, but this [REDACTED PII] is a good person, a super-successful leader.  I support [REDACTED COMMUNITY THAT CANNOT BE NAMED] personally</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedD615995BF9E15453E88413CFAEC53F322FDC67F2098E3FA59F7835CE170B9A89" id="message-redactedD615995BF9E15453E88413CFAEC53F322FDC67F2098E3FA59F7835CE170B9A89" title="Message sent: 26-Jan-22 06:35 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">is there anything we can do here</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted3394A39F85425CA8F7C02FFEC7F699F85C6E6FF3D75638917257810F37A27CAC" id="message-redacted3394A39F85425CA8F7C02FFEC7F699F85C6E6FF3D75638917257810F37A27CAC" title="Message sent: 26-Jan-22 06:35 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention" title="[REDACTED]">"Look At Me, I'm The Captain Now"</span></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">26-Jan-22 06:38 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedFD3F43DCDBB4B78A2F8F373E49BDC8957BD6C894B7C7C3E475C8AD9DCE50A8B7" id="message-redactedFD3F43DCDBB4B78A2F8F373E49BDC8957BD6C894B7C7C3E475C8AD9DCE50A8B7" title="Message sent: 26-Jan-22 06:38 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Do how</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/c10eb9beb99cb6a083850b22e96e8c21-41D6B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Not Us, Me"</span>
+
+
+        <span class="chatlog__timestamp">26-Jan-22 06:40 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedEAE5C5A26728DD393FCDC35210FC2F890FC36B92CF7EF5C27AE9C677A9A5D965" id="message-redactedEAE5C5A26728DD393FCDC35210FC2F890FC36B92CF7EF5C27AE9C677A9A5D965" title="Message sent: 26-Jan-22 06:40 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Generate likes n subscribes, I guess.  Support our ally, [REDACTED COMMUNITY THAT CANNOT BE NAMED]?</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted63CC24C72467F442FF091DD64FD7B6E0DA68E1C7BDCF4DF93003CD676920A109" id="message-redacted63CC24C72467F442FF091DD64FD7B6E0DA68E1C7BDCF4DF93003CD676920A109" title="Message sent: 26-Jan-22 06:40 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">this is a coordinated attck on them.  Their anarchist structure allowed this bad PR, which i respect, but antiwork should survive n thrive bc it is good for the world</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted6E7CB6B6B92C05CA6D5217E85E2F7FD24D13A2D133729501E599A4A406B7C3A5" id="message-redacted6E7CB6B6B92C05CA6D5217E85E2F7FD24D13A2D133729501E599A4A406B7C3A5" title="Message sent: 26-Jan-22 06:41 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">theyll prolly just come out stronger than ever and generating spinoffs</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">26-Jan-22 06:47 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedABC80B225BACF706C4B9FD0B0CC37EEB0D466DD855E6ACBA2801E39E4DB49334" id="message-redactedABC80B225BACF706C4B9FD0B0CC37EEB0D466DD855E6ACBA2801E39E4DB49334" title="Message sent: 26-Jan-22 06:47 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">My gut take is that we don't want to or need to get involved in this.</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="partygritty">
+                                <img class="emoji emoji--small" alt="partygritty" src="./other chat_files/891045378789617734-72B59.gif" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction" title="100">
+                                <img class="emoji emoji--small" alt="💯" src="./other chat_files/1f4af-2188D.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+            <div class="chatlog__message " data-message-id="redacted42E0BD6EF7EC61383850F3F94B21E77AB4838FCD8876124A7D7BBFEC565A7F29" id="message-redacted42E0BD6EF7EC61383850F3F94B21E77AB4838FCD8876124A7D7BBFEC565A7F29" title="Message sent: 26-Jan-22 06:48 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Their team bungled this thing pretty bad, and that's fine. They'll learn and do better. Or they won't.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted750FE332F8DD1C8B7A46B6159F62A983E281268F9700159435A0DFE45D262509" id="message-redacted750FE332F8DD1C8B7A46B6159F62A983E281268F9700159435A0DFE45D262509" title="Message sent: 26-Jan-22 06:48 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">There is a small part of me that wants to reach out and offer my expertise in shedding a negative impression among members of your community.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedFC3C6D0E5A2BA201A03B5473961A3DD022F5A0B270DB4FF33AB0223B97DB4264" id="message-redactedFC3C6D0E5A2BA201A03B5473961A3DD022F5A0B270DB4FF33AB0223B97DB4264" title="Message sent: 26-Jan-22 06:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Offer them some kind of framework from my experience guiding the [BERNIE_SUB] team away from <em>the trials</em> post-closure and reopening</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/c10eb9beb99cb6a083850b22e96e8c21-41D6B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Not Us, Me"</span>
+
+
+        <span class="chatlog__timestamp">26-Jan-22 06:52 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedE63F3381372E1E92A71B1FACF480C9B14DF1DF11178A7EC9EFEF4F33675B4B6E" id="message-redactedE63F3381372E1E92A71B1FACF480C9B14DF1DF11178A7EC9EFEF4F33675B4B6E" title="Message sent: 26-Jan-22 06:52 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">You will struggle to get through.  Just won't be how it works.  It is rare we hit the level of organization we did.  Thanks, Bernie.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedB005DC39BD5AE8C4EB0919B0F077F2C0E22105B1B6CE0A21B9818EF1582C435F" id="message-redactedB005DC39BD5AE8C4EB0919B0F077F2C0E22105B1B6CE0A21B9818EF1582C435F" title="Message sent: 26-Jan-22 06:53 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">This is good for them</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedC3751125153244982954B8C13C6391D9522234974D8633A84FD94511CC6EFF8F" id="message-redactedC3751125153244982954B8C13C6391D9522234974D8633A84FD94511CC6EFF8F" title="Message sent: 26-Jan-22 06:53 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">In the long run, probably</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted62EB8CCD1827E5980E9E9B7005522864941BAEC54CB148C466E8CE650091DC6C" id="message-redacted62EB8CCD1827E5980E9E9B7005522864941BAEC54CB148C466E8CE650091DC6C" title="Message sent: 26-Jan-22 06:53 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">hell, in the short run</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted10EF9EC0CD7BBF5A3661A4A75292C3440913E896ADCD51E35DF0D262E076AFE1" id="message-redacted10EF9EC0CD7BBF5A3661A4A75292C3440913E896ADCD51E35DF0D262E076AFE1" title="Message sent: 26-Jan-22 06:53 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">they're probably internally working out kinks</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">26-Jan-22 06:53 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted0480054927ED013F89864CA915BB5401CA8CA488C647FC6E2FCDCEA0E05B77F2" id="message-redacted0480054927ED013F89864CA915BB5401CA8CA488C647FC6E2FCDCEA0E05B77F2" title="Message sent: 26-Jan-22 06:53 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Might not get through but that's ok</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/c10eb9beb99cb6a083850b22e96e8c21-41D6B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Not Us, Me"</span>
+
+
+        <span class="chatlog__timestamp">26-Jan-22 06:56 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted9C4CD9C10CB5381FAA5AE20301E882B856DA1BE0D07CC95B0B64EAF24E931355" id="message-redacted9C4CD9C10CB5381FAA5AE20301E882B856DA1BE0D07CC95B0B64EAF24E931355" title="Message sent: 26-Jan-22 06:56 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">alright, thanks for helping me work thru my support</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedDF4F26E155EC860C2577BE65F87D11AD0C1FA0FCDD0DC518EC810ED7217FD205" id="message-redactedDF4F26E155EC860C2577BE65F87D11AD0C1FA0FCDD0DC518EC810ED7217FD205" title="Message sent: 26-Jan-22 06:57 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://tenor.com/view/italia-team-figure-skating-figure-skate-ice-skate-ice-skating-gif-12487068">https://tenor.com/view/italia-team-figure-skating-figure-skate-ice-skate-ice-skating-gif-12487068</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="./other chat_files/tenor-7AB9C.png">
+                                                <img class="chatlog__embed-thumbnail" src="./other chat_files/tenor-7AB9C.png" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted731B79A8E512E462BE95969A601BC97D5BC7351C90908C397F8D0E47D73C5BCF" id="message-redacted731B79A8E512E462BE95969A601BC97D5BC7351C90908C397F8D0E47D73C5BCF" title="Message sent: 26-Jan-22 06:57 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">how i feel RN</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted02B8496981CB9707C38EC4002DCF9F20F7F33503B936B46BCFF9762EDAAFC59D" id="message-redacted02B8496981CB9707C38EC4002DCF9F20F7F33503B936B46BCFF9762EDAAFC59D" title="Message sent: 26-Jan-22 07:01 PM">
+			    [REDACTED, NOT REVIEWED YOUTUBE VIDEO]
+            </div>
+            <div class="chatlog__message " data-message-id="redactedDA045730E4B773854F2F14458109340D7FA6CF0949205B630A2265F9B4027656" id="message-redactedDA045730E4B773854F2F14458109340D7FA6CF0949205B630A2265F9B4027656" title="Message sent: 26-Jan-22 07:01 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">also this</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/211ffea87f814cbf05d7b3109c36e1e0-3BFD0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">HAL3000#0000</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">27-Jan-22 03:00 AM</span>
+
+            <div class="chatlog__message " data-message-id="redactedB9DD771E4C716E9EFB8B47CB7DE41AC8128E567C9313FDC2C696894FDC0E50F0" id="message-redactedB9DD771E4C716E9EFB8B47CB7DE41AC8128E567C9313FDC2C696894FDC0E50F0" title="Message sent: 27-Jan-22 03:00 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"> Robot Alerts! <img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg">
+<strong>Mod Queues:</strong>
+<a href="https://www.rexxit.cxm/r/saltedhash480287522/about/modqueue">https://www.rexxit.cxm/r/saltedhash348201094/about/modqueue</a>
+<a href="https://www.rexxit.cxm/r/saltedhash1924079755/about/modqueue">https://www.rexxit.cxm/r/saltedhash185021352/about/modqueue</a>
+
+<strong>Modmail:</strong>
+<a href="https://mod.rexxit.cxm/mail/all/">https://mod.rexxit.cxm/mail/all/</a>
+
+<strong>Pin a comment on a top post!</strong>
+<a href="https://www.rexxit.cxm/r/saltedhash480287522">https://www.rexxit.cxm/r/saltedhash348201094</a>
+<a href="https://www.rexxit.cxm/r/saltedhash1924079755/">https://www.rexxit.cxm/r/saltedhash185021352/</a></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/211ffea87f814cbf05d7b3109c36e1e0-3BFD0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">HAL3000#0000</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">28-Jan-22 03:00 AM</span>
+
+            <div class="chatlog__message " data-message-id="redactedCD88D7BEFAEB7F85B59F2DEB457040BBDA962577EAB8E570F7C41AA578BBAFF6" id="message-redactedCD88D7BEFAEB7F85B59F2DEB457040BBDA962577EAB8E570F7C41AA578BBAFF6" title="Message sent: 28-Jan-22 03:00 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"> Robot Alerts! <img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg">
+<strong>Mod Queues:</strong>
+<a href="https://www.rexxit.cxm/r/saltedhash480287522/about/modqueue">https://www.rexxit.cxm/r/saltedhash348201094/about/modqueue</a>
+<a href="https://www.rexxit.cxm/r/saltedhash1924079755/about/modqueue">https://www.rexxit.cxm/r/saltedhash185021352/about/modqueue</a>
+
+<strong>Modmail:</strong>
+<a href="https://mod.rexxit.cxm/mail/all/">https://mod.rexxit.cxm/mail/all/</a>
+
+<strong>Pin a comment on a top post!</strong>
+<a href="https://www.rexxit.cxm/r/saltedhash480287522">https://www.rexxit.cxm/r/saltedhash348201094</a>
+<a href="https://www.rexxit.cxm/r/saltedhash1924079755/">https://www.rexxit.cxm/r/saltedhash185021352/</a></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/c10eb9beb99cb6a083850b22e96e8c21-41D6B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Not Us, Me"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 10:53 AM</span>
+
+            <div class="chatlog__message " data-message-id="redactedE32D20C7F01F59F844FEE179EAD22CFBA7DF7E57B5EA978634B6416F71221F67" id="message-redactedE32D20C7F01F59F844FEE179EAD22CFBA7DF7E57B5EA978634B6416F71221F67" title="Message sent: 28-Jan-22 10:53 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://www.rexxit.cxm/r/saltedhash480287522/comments/[redacted]/[redacted]/[redacted]/?context=3">https://www.rexxit.cxm/r/saltedhash348201094/[redacted]/[redacted]/[redacted]/[redacted]/?context=3</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,255,255,255)"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://www.rexxit.cxm/r/saltedhash480287522/comments/[redacted]/[redacted]/[redacted]/?context=3">
+                                                        <div class="markdown preserve-whitespace">r/saltedhash348201094 - [redacted]...</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">[REDACTED] votes and [REDACTED] comments so far on Reddit</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="./other chat_files/PSvAVpLFXQP3sc58umrh7q-IT6QDoDghEYshoduiQa-890CA.jpg">
+                                                <img class="chatlog__embed-thumbnail" src="./other chat_files/PSvAVpLFXQP3sc58umrh7q-IT6QDoDghEYshoduiQa-890CA.jpg" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/96c4a4bf87279be5ecf3487baf17e0ef-8F486.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Like the crack of the whip, I *Snap* attack"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 11:16 AM</span>
+
+            <div class="chatlog__message " data-message-id="redacted3AEF9A19CAA17F3F6A2A960768A16C0617A3C971BDEB7A14B90828352B134909" id="message-redacted3AEF9A19CAA17F3F6A2A960768A16C0617A3C971BDEB7A14B90828352B134909" title="Message sent: 28-Jan-22 11:16 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I want [REDACTED] for all</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/c10eb9beb99cb6a083850b22e96e8c21-41D6B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Not Us, Me"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 04:03 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted1A20779DB28DC871D2DE18FB2E950AD60C4B9A3D1206E7543A43BC7D8C6CA484" id="message-redacted1A20779DB28DC871D2DE18FB2E950AD60C4B9A3D1206E7543A43BC7D8C6CA484" title="Message sent: 28-Jan-22 04:03 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention">@everyone</span> A funny thing happened today.  Basically, we find ourselves now running r/W.rk.R.frm. 1. Yay!  2. Who here wants to help mod?</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedE653CF26CFF48031F2206E5A8AD5DCE9F24C9B0CA5710094B957FB53B03CF39F" id="message-redactedE653CF26CFF48031F2206E5A8AD5DCE9F24C9B0CA5710094B957FB53B03CF39F" title="Message sent: 28-Jan-22 04:03 PM">
+				[REDACTED EMBED OF OUR NEW SUB]
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 04:03 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedD62367B6455829BA079C0ECB2AA7CD8D2446A7537EA3793D40F8EA36B8D9AE80" id="message-redactedD62367B6455829BA079C0ECB2AA7CD8D2446A7537EA3793D40F8EA36B8D9AE80" title="Message sent: 28-Jan-22 04:03 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I do!</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/09cce78c02f089bd7b6c7c7a6efbd991-2C126.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"I'VE GOT THE POWAH"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 04:10 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted7FC6521777BCBF2CCB37B0BFF8679A878C685B5DA24745A0ADCFFE8A4844BDF1" id="message-redacted7FC6521777BCBF2CCB37B0BFF8679A878C685B5DA24745A0ADCFFE8A4844BDF1" title="Message sent: 28-Jan-22 04:10 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Hmm...</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted4CBF68320CDF6917756B7698D9EE9A10E5286C875234F994F4855ED85B44821D" id="message-redacted4CBF68320CDF6917756B7698D9EE9A10E5286C875234F994F4855ED85B44821D" title="Message sent: 28-Jan-22 04:10 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Yes</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted8608AD6B1466B0110DA5628FC8AC582A3F85F9CD8256059A356EC1B9005C4044" id="message-redacted8608AD6B1466B0110DA5628FC8AC582A3F85F9CD8256059A356EC1B9005C4044" title="Message sent: 28-Jan-22 04:10 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">This is going to be very good for [POWERMOD_SUB2]. Damn good job ["Not Us, Me"]</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/c10eb9beb99cb6a083850b22e96e8c21-41D6B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Not Us, Me"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 04:17 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted1EBD09D741375CA89C294C9549F892AE86594AC599381F97974DA2650E21C02F" id="message-redacted1EBD09D741375CA89C294C9549F892AE86594AC599381F97974DA2650E21C02F" title="Message sent: 28-Jan-22 04:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Credit to <span class="mention" title="[REDACTED]">"A Tough, Sturdy Animal"</span>, <span class="mention" title="[REDACTED]">"Look At Me, I'm The Captain Now"</span> , and then, way down the line, me</span>
+
+                                <span class="chatlog__edited-timestamp" title="28-Jan-22 04:17 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/611113c6eda196b919c5da7209867cae-54778.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"I'm just here so I won't get fined"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 04:24 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted9A5763602DEAE080A92CFEB1DCF863960C4F28E9D31B51D0976B5553F3450266" id="message-redacted9A5763602DEAE080A92CFEB1DCF863960C4F28E9D31B51D0976B5553F3450266" title="Message sent: 28-Jan-22 04:24 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">omg wtf lol</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedAAC0C9C4C84FF40051BF69E3E76155C30F6288CB0E4FB364C09DF429E0F73582" id="message-redactedAAC0C9C4C84FF40051BF69E3E76155C30F6288CB0E4FB364C09DF429E0F73582" title="Message sent: 28-Jan-22 04:24 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">i'll take it</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted358DC1E4AA07771096C5FA9DF5E5E8D466D67C881CFE79A982163BA66D45D5AA" id="message-redacted358DC1E4AA07771096C5FA9DF5E5E8D466D67C881CFE79A982163BA66D45D5AA" title="Message sent: 28-Jan-22 04:25 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">on /u/saltedhash1694829424 pls</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/09cce78c02f089bd7b6c7c7a6efbd991-2C126.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"I'VE GOT THE POWAH"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 04:27 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted7883EDEE34C642C480DF6A095A7E2348EC7508A085E7002C96B38D72448CA470" id="message-redacted7883EDEE34C642C480DF6A095A7E2348EC7508A085E7002C96B38D72448CA470" title="Message sent: 28-Jan-22 04:27 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">["A Tough, Sturdy Animal"] this is great</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedACDC04A575E5A3712C6FC0FA245F9D86FF9FCAC8F304324343F94C4D2BB0EB0C" id="message-redactedACDC04A575E5A3712C6FC0FA245F9D86FF9FCAC8F304324343F94C4D2BB0EB0C" title="Message sent: 28-Jan-22 04:27 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Thank you</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/c10eb9beb99cb6a083850b22e96e8c21-41D6B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Not Us, Me"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 04:28 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedC6138BC7B95E69C28221F35DBB536A2CDA165227AFD691C2E63FA81FCBC468A6" id="message-redactedC6138BC7B95E69C28221F35DBB536A2CDA165227AFD691C2E63FA81FCBC468A6" title="Message sent: 28-Jan-22 04:28 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">forewarned, this community blew up into almost 500k overnight after all that antiwork drama.  A lot of folks are emotional and/or mad.  Lots of mod attacks.  Those will slow dramatically with time, I expect</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="100">
+                                <img class="emoji emoji--small" alt="💯" src="./other chat_files/1f4af-2188D.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/96c4a4bf87279be5ecf3487baf17e0ef-8F486.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Like the crack of the whip, I *Snap* attack"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 05:10 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted41143A79BA96B50FC6199AC873378E3CDC3BC2EFA17BF4DB963940A3A1075B34" id="message-redacted41143A79BA96B50FC6199AC873378E3CDC3BC2EFA17BF4DB963940A3A1075B34" title="Message sent: 28-Jan-22 05:10 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I'll fight for people I don't know</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="stonks">
+                                <img class="emoji emoji--small" alt="stonks" src="./other chat_files/720776568649023529-FE2C8.png" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/611113c6eda196b919c5da7209867cae-54778.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"I'm just here so I won't get fined"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 05:12 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedAB4BEE109E8027530D6D386EB137602F42C1CEC3782BE6CE902FCB2AAEA75889" id="message-redactedAB4BEE109E8027530D6D386EB137602F42C1CEC3782BE6CE902FCB2AAEA75889" title="Message sent: 28-Jan-22 05:12 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Hell yeah</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/211ffea87f814cbf05d7b3109c36e1e0-3BFD0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">HAL3000#0000</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">29-Jan-22 03:00 AM</span>
+
+            <div class="chatlog__message " data-message-id="redacted990357CCAF5D7AB656A2B55CD8669F02DDB2926FC9BBB2696A1A74728FDD76F0" id="message-redacted990357CCAF5D7AB656A2B55CD8669F02DDB2926FC9BBB2696A1A74728FDD76F0" title="Message sent: 29-Jan-22 03:00 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"> Robot Alerts! <img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg">
+<strong>Mod Queues:</strong>
+<a href="https://www.rexxit.cxm/r/saltedhash480287522/about/modqueue">https://www.rexxit.cxm/r/saltedhash348201094/about/modqueue</a>
+<a href="https://www.rexxit.cxm/r/saltedhash1924079755/about/modqueue">https://www.rexxit.cxm/r/saltedhash185021352/about/modqueue</a>
+
+<strong>Modmail:</strong>
+<a href="https://mod.rexxit.cxm/mail/all/">https://mod.rexxit.cxm/mail/all/</a>
+
+<strong>Pin a comment on a top post!</strong>
+<a href="https://www.rexxit.cxm/r/saltedhash480287522">https://www.rexxit.cxm/r/saltedhash348201094</a>
+<a href="https://www.rexxit.cxm/r/saltedhash1924079755/">https://www.rexxit.cxm/r/saltedhash185021352/</a></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/211ffea87f814cbf05d7b3109c36e1e0-3BFD0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">HAL3000#0000</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">30-Jan-22 03:00 AM</span>
+
+            <div class="chatlog__message " data-message-id="redacted28354AB1D112A256DA8B15D1F18282210C4FE086283AED8D96B22987260BFDBD" id="message-redacted28354AB1D112A256DA8B15D1F18282210C4FE086283AED8D96B22987260BFDBD" title="Message sent: 30-Jan-22 03:00 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"> Robot Alerts! <img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg">
+<strong>Mod Queues:</strong>
+<a href="https://www.rexxit.cxm/r/saltedhash480287522/about/modqueue">https://www.rexxit.cxm/r/saltedhash348201094/about/modqueue</a>
+<a href="https://www.rexxit.cxm/r/saltedhash1924079755/about/modqueue">https://www.rexxit.cxm/r/saltedhash185021352/about/modqueue</a>
+
+<strong>Modmail:</strong>
+<a href="https://mod.rexxit.cxm/mail/all/">https://mod.rexxit.cxm/mail/all/</a>
+
+<strong>Pin a comment on a top post!</strong>
+<a href="https://www.rexxit.cxm/r/saltedhash480287522">https://www.rexxit.cxm/r/saltedhash348201094</a>
+<a href="https://www.rexxit.cxm/r/saltedhash1924079755/">https://www.rexxit.cxm/r/saltedhash185021352/</a></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/611113c6eda196b919c5da7209867cae-54778.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"I'm just here so I won't get fined"</span>
+
+
+        <span class="chatlog__timestamp">30-Jan-22 12:12 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted979F57912B72D6C0AD85A76AEE64FE1A3E151E7E7015D855B7C72848F582037A" id="message-redacted979F57912B72D6C0AD85A76AEE64FE1A3E151E7E7015D855B7C72848F582037A" title="Message sent: 30-Jan-22 12:12 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Are /r/W.rk.R.frm and /r/saltedhash3104462668 going to be officially affiliated in any way?</span>
+
+                                <span class="chatlog__edited-timestamp" title="30-Jan-22 12:12 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/c10eb9beb99cb6a083850b22e96e8c21-41D6B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Not Us, Me"</span>
+
+
+        <span class="chatlog__timestamp">30-Jan-22 12:20 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted9E2364F10D2A43F647AF40C279C62318F6F124DFD9696095FB533133316F321F" id="message-redacted9E2364F10D2A43F647AF40C279C62318F6F124DFD9696095FB533133316F321F" title="Message sent: 30-Jan-22 12:20 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I am unsure at this point.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedBD2D91AB98BFC2E749C1E002F802FC21A77C9F50A1A5E056ED0FDF5A407F2913" id="message-redactedBD2D91AB98BFC2E749C1E002F802FC21A77C9F50A1A5E056ED0FDF5A407F2913" title="Message sent: 30-Jan-22 12:20 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I would like to say yes, but I really have no idea. Which makes me a solid "no" right now.  I think WR gets a lot of benefit by being its own thing focused on cross-cutting workers issues with minimum partisanship.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedD40B648973CE9AE08FB22B87719540CD1A1EA1AF86829C5F153C1E0609728A0F" id="message-redactedD40B648973CE9AE08FB22B87719540CD1A1EA1AF86829C5F153C1E0609728A0F" title="Message sent: 30-Jan-22 12:21 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I wouldn't do it without putting a lot - like a LOT - of thought into it.</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="100">
+                                <img class="emoji emoji--small" alt="💯" src="./other chat_files/1f4af-2188D.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/611113c6eda196b919c5da7209867cae-54778.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"I'm just here so I won't get fined"</span>
+
+
+        <span class="chatlog__timestamp">30-Jan-22 12:31 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted6678BE0BD29050423591FED2092BD7B417A8342A9AE9D2CF5153DDDEAE93F399" id="message-redacted6678BE0BD29050423591FED2092BD7B417A8342A9AE9D2CF5153DDDEAE93F399" title="Message sent: 30-Jan-22 12:31 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Yeah, I think it’s going to be a possibility for down the road rather than right now. Could be quite the opportunity… just depending on how everything shakes out</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/09cce78c02f089bd7b6c7c7a6efbd991-2C126.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"I'VE GOT THE POWAH"</span>
+
+
+        <span class="chatlog__timestamp">30-Jan-22 03:58 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted92475B7A0A498662332A5457FEFDD8BD12FD85E4660608CF8A1A4EFCE35EE52D" id="message-redacted92475B7A0A498662332A5457FEFDD8BD12FD85E4660608CF8A1A4EFCE35EE52D" title="Message sent: 30-Jan-22 03:58 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">The [LABOR] reform mod who made a post after I said it's best to go incognito... Smdh</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted8A8E099B05CF311240CE30C680DB30079CA855765619F724085A3C499FCEF572" id="message-redacted8A8E099B05CF311240CE30C680DB30079CA855765619F724085A3C499FCEF572" title="Message sent: 30-Jan-22 04:01 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">This is all of their first time modding a sub, yeah? Will need to hold their hands pretty hard.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">30-Jan-22 05:06 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedFAE449913A5124B0F2B31380FE567B82A25A7249EDA66DB9809A4C3D5F7BA01B" id="message-redactedFAE449913A5124B0F2B31380FE567B82A25A7249EDA66DB9809A4C3D5F7BA01B" title="Message sent: 30-Jan-22 05:06 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">yeah that was not good</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/c10eb9beb99cb6a083850b22e96e8c21-41D6B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Not Us, Me"</span>
+
+
+        <span class="chatlog__timestamp">30-Jan-22 06:15 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedE8F5C66E27F193FCDED6BA015BB15D7FF17CFF5BC761CE16A66E93BF4AD513DC" id="message-redactedE8F5C66E27F193FCDED6BA015BB15D7FF17CFF5BC761CE16A66E93BF4AD513DC" title="Message sent: 30-Jan-22 06:15 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Yeahhhh</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./other chat_files/211ffea87f814cbf05d7b3109c36e1e0-3BFD0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">HAL3000#0000</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">31-Jan-22 03:01 AM</span>
+
+            <div class="chatlog__message " data-message-id="redacted32EFA96023E9B6F82A235E3BF534CCD3FCAD0E37191B10BBAFEEE720ED938FF3" id="message-redacted32EFA96023E9B6F82A235E3BF534CCD3FCAD0E37191B10BBAFEEE720ED938FF3" title="Message sent: 31-Jan-22 03:01 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"> Robot Alerts! <img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg"><img loading="lazy" class="emoji " alt="🤖" title="robot" src="./other chat_files/1f916.svg">
+<strong>Mod Queues:</strong>
+<a href="https://www.rexxit.cxm/r/saltedhash480287522/about/modqueue">https://www.rexxit.cxm/r/saltedhash348201094/about/modqueue</a>
+<a href="https://www.rexxit.cxm/r/saltedhash1924079755/about/modqueue">https://www.rexxit.cxm/r/saltedhash185021352/about/modqueue</a>
+
+<strong>Modmail:</strong>
+<a href="https://mod.rexxit.cxm/mail/all/">https://mod.rexxit.cxm/mail/all/</a>
+
+<strong>Pin a comment on a top post!</strong>
+<a href="https://www.rexxit.cxm/r/saltedhash480287522">https://www.rexxit.cxm/r/saltedhash348201094</a>
+<a href="https://www.rexxit.cxm/r/saltedhash1924079755/">https://www.rexxit.cxm/r/saltedhash185021352/</a></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+</div>
+
+</body></html>

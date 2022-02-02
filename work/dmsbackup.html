@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://workreformscandal.com/impostordms/dmsbackup.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Direct Messages - ["Look At Me, I'm The Captain Now"]</title>
+    
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-300.woff);
+            font-weight: 300;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-400.woff);
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-500.woff);
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-600.woff);
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-700.woff);
+            font-weight: 700;
+        }
+
+        body {
+            background-color: #36393e;
+            color: #dcddde;
+            font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        a {
+            color: #00aff4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+        .markdown {
+            max-width: 100%;
+            line-height: 1.3;
+            overflow-wrap: break-word;
+        }
+
+        .preserve-whitespace {
+            white-space: pre-wrap;
+        }
+
+        .spoiler-text {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .spoiler-text--hidden {
+            cursor: pointer;
+            background-color: #202225;
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .spoiler-text--hidden:hover {
+            background-color: rgba(32, 34, 37, 0.8);
+        }
+
+        .spoiler-text--hidden::selection {
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .quote {
+            display: flex;
+            margin: 0.05em 0;
+        }
+
+        .quote::before {
+            content: "";
+            margin-right: 0.5em;
+            border: 2px solid #4f545c;
+            border-radius: 3px;
+        }
+
+        .pre {
+            background-color: #2f3136;
+            font-family: "Consolas", "Courier New", Courier, monospace;
+        }
+
+        .pre--multiline {
+            margin-top: 0.25em;
+            padding: 0.5em;
+            border: 2px solid #282b30;
+            border-radius: 5px;
+            color: #b9bbbe;
+        }
+
+        .pre--multiline.hljs {
+            background-color: #2f3136;
+            color: #b9bbbe;
+        }
+
+        .pre--inline {
+            padding: 2px;
+            border-radius: 3px;
+            font-size: 0.85em;
+        }
+
+        .mention {
+            border-radius: 3px;
+            padding: 0 2px;
+            color: #dee0fc;
+            background-color: rgba(88, 101, 242, .3);
+            font-weight: 500;
+        }
+
+        .mention:hover {
+            background-color: #5865f2;
+            color: #ffffff
+        }
+
+        .timestamp {
+            border-radius: 3px;
+            padding: 0 2px;
+            background-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .emoji {
+            width: 1.325em;
+            height: 1.325em;
+            margin: 0 0.06em;
+            vertical-align: -0.4em;
+        }
+
+        .emoji--small {
+            width: 1em;
+            height: 1em;
+        }
+
+        .emoji--large {
+            width: 2.8em;
+            height: 2.8em;
+        }
+
+        .preamble {
+            display: grid;
+            margin: 0 0.3em 0.6em 0.3em;
+            max-width: 100%;
+            grid-template-columns: auto 1fr;
+        }
+
+        .preamble__guild-icon-container {
+            grid-column: 1;
+        }
+
+        .preamble__guild-icon {
+            max-width: 88px;
+            max-height: 88px;
+        }
+
+        .preamble__entries-container {
+            grid-column: 2;
+            margin-left: 0.6em;
+        }
+
+        .preamble__entry {
+            font-size: 1.4em;
+            color: #ffffff;
+        }
+
+        .preamble__entry--small {
+            font-size: 1em;
+        }
+
+        .chatlog {
+            max-width: 100%;
+        }
+
+        .chatlog__message-group {
+            display: grid;
+            margin: 0 0.6em;
+            padding: 0.9em 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            grid-template-columns: auto 1fr;
+        }
+
+        .chatlog__reference-symbol {
+            grid-column: 1;
+            margin: 8px 4px 4px 18px;
+            border-left: 2px solid #4f545c;
+            border-top: 2px solid #4f545c;
+            border-radius: 8px 0 0 0;
+        }
+
+        .chatlog__reference {
+            display: flex;
+            grid-column: 2;
+            margin-bottom: 0.25em;
+            font-size: 0.875em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            align-items: center;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-avatar {
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            margin-right: 0.25em;
+        }
+
+        .chatlog__reference-name {
+            margin-right: 0.3em;
+            font-weight: 600;
+        }
+
+        .chatlog__reference-content {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__reference-content a:hover {
+            text-decoration: none;
+        }
+
+        .chatlog__reference-link {
+            cursor: pointer;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-link * {
+            display: inline;
+            pointer-events: none;
+        }
+
+        .chatlog__reference-link:hover {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-link:hover *:not(.spoiler-text) {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-edited-timestamp {
+            margin-left: 0.25em;
+            font-size: 0.8em;
+            unicode-bidi: bidi-override;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__author-avatar-container {
+            grid-column: 1;
+            width: 40px;
+            height: 40px;
+            margin-right: 16px;
+        }
+
+        .chatlog__author-avatar {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .chatlog__messages {
+            grid-column: 2;
+            min-width: 50%;
+            direction: ltr;
+        }
+
+        .chatlog__author-name {
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .chatlog__timestamp {
+            margin-left: 0.3em;
+            font-size: 0.75em;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__message {
+            padding: 0.1em 0.3em;
+            margin: 0 -0.3em;
+            background-color: transparent;
+            transition: background-color 1s ease;
+        }
+
+        .chatlog__message--highlighted {
+            background-color: rgba(114, 137, 218, 0.2);
+        }
+
+        .chatlog__message--pinned {
+            background-color: rgba(249, 168, 37, 0.05);
+        }
+
+        .chatlog__content {
+            font-size: 0.95em;
+            word-wrap: break-word;
+        }
+
+        .chatlog__edited-timestamp {
+            margin-left: 0.15em;
+            font-size: 0.8em;
+        }
+
+        .chatlog__attachment {
+            display: inline-block;
+            position: relative;
+            margin-top: 0.3em;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden {
+            cursor: pointer;
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .chatlog__attachment--hidden * {
+            pointer-events: none;
+        }
+
+        .chatlog__attachment-spoiler-caption {
+            display: none;
+            z-index: 999;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0.4em 0.8em;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 20px;
+            color: #dcddde;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-spoiler-caption {
+            display: block;
+        }
+
+        .chatlog__attachment--hidden:hover .chatlog__attachment-spoiler-caption {
+            color: #fff;
+        }
+
+        .chatlog__attachment-media {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-media {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic {
+            width: 100%;
+            max-width: 520px;
+            height: 40px;
+            padding: 10px;
+            background-color: #2f3136;
+            border: 1px solid #292b2f;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-generic {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic-icon {
+            float: left;
+            width: 30px;
+            height: 100%;
+            margin-right: 10px;
+        }
+
+        .chatlog__attachment-generic-size {
+            color: #72767d;
+            font-size: 12px;
+        }
+
+        .chatlog__attachment-generic-name {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__edited-timestamp {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__embed {
+            display: flex;
+            margin-top: 0.3em;
+            max-width: 520px;
+        }
+
+        .chatlog__embed-color-pill {
+            flex-shrink: 0;
+            width: 0.25em;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        .chatlog__embed-color-pill--default {
+            background-color: #202225;
+        }
+
+        .chatlog__embed-content-container {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5em 0.6em;
+            background-color: rgba(46, 48, 54, 0.3);
+            border: 1px solid rgba(46, 48, 54, 0.6);
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        .chatlog__embed-content {
+            display: flex;
+            width: 100%;
+        }
+
+        .chatlog__embed-text {
+            flex: 1;
+        }
+
+        .chatlog__embed-author {
+            display: flex;
+            margin-bottom: 0.3em;
+            align-items: center;
+        }
+
+        .chatlog__embed-author-icon {
+            margin-right: 0.5em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .chatlog__embed-author-name {
+            font-size: 0.875em;
+            font-weight: 600;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+            color: #ffffff
+        }
+
+        .chatlog__embed-author-name-link {
+            color: #ffffff;
+        }
+
+        .chatlog__embed-title {
+            margin-bottom: 0.2em;
+            font-size: 0.875em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-description {
+            font-weight: 500;
+            font-size: 0.85em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-fields {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 0.5em;
+        }
+
+        .chatlog__embed-field {
+            flex: 0;
+            min-width: 100%;
+            max-width: 506px;
+            padding-top: 0.6em;
+            font-size: 0.875em;
+        }
+
+        .chatlog__embed-field--inline {
+            flex: 1;
+            flex-basis: auto;
+            min-width: 150px;
+        }
+
+        .chatlog__embed-field-name {
+            margin-bottom: 0.2em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-field-value {
+            font-weight: 500;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-thumbnail {
+            flex: 0;
+            margin-left: 1.2em;
+            max-width: 80px;
+            max-height: 80px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-image-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-image {
+            max-width: 500px;
+            max-height: 400px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-footer {
+            margin-top: 0.6em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-footer-icon {
+            margin-right: 0.2em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .chatlog__embed-footer-text {
+            vertical-align: middle;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+
+        .chatlog__embed-plainimage {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-spotify {
+            border: 0;
+        }
+
+        .chatlog__embed-youtube-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-youtube {
+            border: 0;
+            border-radius: 3px;
+        }
+
+        .chatlog__reactions {
+            display: flex;
+        }
+
+        .chatlog__reaction {
+            display: flex;
+            align-items: center;
+            margin: 0.35em 0.1em 0.1em 0;
+            padding: .125rem .375rem;
+            background-color: #2f3136;
+            border-radius: 8px;
+            border-color: transparent;
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        .chatlog__reaction:hover {
+            border-color: hsla(0,0%,100%,.2);
+            border-width: 1px;
+            border-style: solid;
+            background-color: transparent;
+        }
+
+        .chatlog__reaction-count {
+            min-width: 9px;
+            margin-left: 0.35em;
+            font-size: 0.875em;
+            color: #b9bbbe;
+        }
+
+        .chatlog__reaction:hover .chatlog__reaction-count {
+            color: #dcddde;
+        }
+
+        .chatlog__bot-tag {
+            position: relative;
+            top: -.1em;
+            margin-left: 0.3em;
+            padding: 0.05em 0.3em;
+            border-radius: 3px;
+            line-height: 1.3;
+            background-color: #5865F2;
+            color: #ffffff;
+            font-size: 0.625em;
+            font-weight: 500;
+        }
+
+        .postamble {
+            margin: 1.4em 0.3em 0.6em 0.3em;
+            padding: 1em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .postamble__entry {
+            color: #ffffff;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./dmsbackup_files/solarized-dark.min.css">
+    <script src="./dmsbackup_files/highlight.min.js.download"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler-text--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler-text--hidden');
+            }
+            if (element && element.classList.contains('chatlog__attachment--hidden')) {
+                event.preventDefault();
+                element.classList.remove('chatlog__attachment--hidden');
+            }
+        }
+    </script>
+
+    </head><body><svg style="display: none">
+        <symbol id="icon-attachment" viewBox="0 0 720 960">
+            <path fill="#f4f5fb" d="M50,935a25,25,0,0,1-25-25V50A25,25,0,0,1,50,25H519.6L695,201.32V910a25,25,0,0,1-25,25Z"></path>
+            <path fill="#7789c4" d="M509.21,50,670,211.63V910H50V50H509.21M530,0H50A50,50,0,0,0,0,50V910a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50h0V191Z"></path>
+            <path fill="#f4f5fb" d="M530,215a25,25,0,0,1-25-25V50a25,25,0,0,1,16.23-23.41L693.41,198.77A25,25,0,0,1,670,215Z"></path>
+            <path fill="#7789c4" d="M530,70.71,649.29,190H530V70.71M530,0a50,50,0,0,0-50,50V190a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50Z"></path>
+        </symbol>
+    </svg>
+	
+	
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./dmsbackup_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GWFD39G72J');
+</script>
+
+	
+
+
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="./dmsbackup_files/0-EB806.png" alt="Guild icon" loading="lazy">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">Direct Messages</div>
+        <div class="preamble__entry">Private / ["Look At Me, I'm The Captain Now"]</div>
+
+
+    </div>
+</div>
+
+<div class="chatlog">
+<div class="chatlog__message-group">
+[REDACTED: PRIOR MESSAGES NOT RELEVANT]
+</div>
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/5d3530c21309c8e8de6e451e4d364346-B74B2.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"A Tough, Sturdy Animal"</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-22 06:16 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedFA00F2A49974790B80ED02C5E6D93E977EB71CA149B5F586889911B507706040" id="message-redactedFA00F2A49974790B80ED02C5E6D93E977EB71CA149B5F586889911B507706040" title="Message sent: 27-Jan-22 06:16 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Hey ["Look At Me, I'm The Captain Now"] are you available to chat tonight?</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-22 06:16 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted8D333DECB65966E8BC64E419254882FBA88A866C33D9303FD65A568E8D18B779" id="message-redacted8D333DECB65966E8BC64E419254882FBA88A866C33D9303FD65A568E8D18B779" title="Message sent: 27-Jan-22 06:16 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Yeah sure here for the next little while</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedA0AEAAE6FB5968DE551F03A114A72990C52B599568755AB86CCBFBF41D9904F6" id="message-redactedA0AEAAE6FB5968DE551F03A114A72990C52B599568755AB86CCBFBF41D9904F6" title="Message sent: 27-Jan-22 06:16 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">hour or so</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/5d3530c21309c8e8de6e451e4d364346-B74B2.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"A Tough, Sturdy Animal"</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-22 06:17 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedC84A6AFC5037885AF7D294318C1953BB81154F49FCD068DCDE8BC9DC03FACAA1" id="message-redactedC84A6AFC5037885AF7D294318C1953BB81154F49FCD068DCDE8BC9DC03FACAA1" title="Message sent: 27-Jan-22 06:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">[REDACTED: MISSPELLED SUBREDDIT EXISTS] needs mods tonight, they have no structure and need help getting set up.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted1A2287B26DD21CE6B15C99E8E613456E55C5A6F3E518D6386AA2BA2A6AEFC205" id="message-redacted1A2287B26DD21CE6B15C99E8E613456E55C5A6F3E518D6386AA2BA2A6AEFC205" title="Message sent: 27-Jan-22 06:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Are you able to at least temporarily help them? i'm in a call with them right now.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-22 06:17 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedE98BA34F62EBA046D9B569648BB0611A5A8E2DEF86F25FDDABFE0ABD14ED21AF" id="message-redactedE98BA34F62EBA046D9B569648BB0611A5A8E2DEF86F25FDDABFE0ABD14ED21AF" title="Message sent: 27-Jan-22 06:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Yeah sure</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/5d3530c21309c8e8de6e451e4d364346-B74B2.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"A Tough, Sturdy Animal"</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-22 06:17 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted720C75906811D906E321675E76A732864FF0C3512EABE3BBBC720413C7DCBD6F" id="message-redacted720C75906811D906E321675E76A732864FF0C3512EABE3BBBC720413C7DCBD6F" title="Message sent: 27-Jan-22 06:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">You want to join the call?</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-22 06:17 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedD9B83AB1903C4B417B9FDAE0FBA40B273A23A01C40AA9AD9C026E0036CCA3186" id="message-redactedD9B83AB1903C4B417B9FDAE0FBA40B273A23A01C40AA9AD9C026E0036CCA3186" title="Message sent: 27-Jan-22 06:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">where is this call taking place?</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/5d3530c21309c8e8de6e451e4d364346-B74B2.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"A Tough, Sturdy Animal"</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-22 06:17 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedB8470689414C6F5DB8A29803A7E3F05D6165D0145C4EBF0DE7696EA67E1BC5EE" id="message-redactedB8470689414C6F5DB8A29803A7E3F05D6165D0145C4EBF0DE7696EA67E1BC5EE" title="Message sent: 27-Jan-22 06:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">discord</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-22 06:17 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted29413D8370E5BB9692279586C9D51DA9CBF58008D2C0F01783F3A7268022014E" id="message-redacted29413D8370E5BB9692279586C9D51DA9CBF58008D2C0F01783F3A7268022014E" title="Message sent: 27-Jan-22 06:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">yeah happy to consult</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/5d3530c21309c8e8de6e451e4d364346-B74B2.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"A Tough, Sturdy Animal"</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-22 06:18 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted99BC1BF07C575170C1FE11286E966A042AC4A41F2E18113085409C62A5422AD3" id="message-redacted99BC1BF07C575170C1FE11286E966A042AC4A41F2E18113085409C62A5422AD3" title="Message sent: 27-Jan-22 06:18 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Okay sent a friend request on discord</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedFEF91CE0BED649D4A0059DFE579149ADE4EE6E339F07F71EEBE15DEB2BBADBA9" id="message-redactedFEF91CE0BED649D4A0059DFE579149ADE4EE6E339F07F71EEBE15DEB2BBADBA9" title="Message sent: 27-Jan-22 06:18 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">accept and i can add you to the call</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 03:48 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedD37C42D29CC0AF69517D75D89F12E8A7A432B8140C1EFFDB7EA1B4CD1FE82A0B" id="message-redactedD37C42D29CC0AF69517D75D89F12E8A7A432B8140C1EFFDB7EA1B4CD1FE82A0B" title="Message sent: 28-Jan-22 03:48 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Hey man</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted979B2846BB663873AACF7A722E4CA51442CFC26A4F1DEDC69BDCDF0730794955" id="message-redacted979B2846BB663873AACF7A722E4CA51442CFC26A4F1DEDC69BDCDF0730794955" title="Message sent: 28-Jan-22 03:48 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">You're an all star</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedBAAD68952022E3A70B73DEBA898465BBA708A455C0BDEB7A1F9BC50542568BA0" id="message-redactedBAAD68952022E3A70B73DEBA898465BBA708A455C0BDEB7A1F9BC50542568BA0" title="Message sent: 28-Jan-22 03:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I did not mean to quote a song just now</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted4086B2F4F867629330B0C3F71B2FCE386BEFB86B7B967CD7A11CE2F314895F60" id="message-redacted4086B2F4F867629330B0C3F71B2FCE386BEFB86B7B967CD7A11CE2F314895F60" title="Message sent: 28-Jan-22 03:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">But thanks for doing everything you're doing</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/5d3530c21309c8e8de6e451e4d364346-B74B2.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"A Tough, Sturdy Animal"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 03:49 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted92C144B9CC42E2320D5CB1D57ABB42B3FB7142EE31A86CF1B5CB55CDBD0C0916" id="message-redacted92C144B9CC42E2320D5CB1D57ABB42B3FB7142EE31A86CF1B5CB55CDBD0C0916" title="Message sent: 28-Jan-22 03:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">get your game on, go play</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted599C0845A2AFB9C24F943F391B37CF32C4EE491C6EFEFF29A29A8A20A5AF3B20" id="message-redacted599C0845A2AFB9C24F943F391B37CF32C4EE491C6EFEFF29A29A8A20A5AF3B20" title="Message sent: 28-Jan-22 03:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Yeah for sure!</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 03:49 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted681D924361679D19A30E6DB3ACF17969374A3E286570257764BBCBF030B9E6B7" id="message-redacted681D924361679D19A30E6DB3ACF17969374A3E286570257764BBCBF030B9E6B7" title="Message sent: 28-Jan-22 03:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">rofl</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedDECC2BE4422C961937D449FFF034C7321515F236BC4307E49B2B1019F5EF6A98" id="message-redactedDECC2BE4422C961937D449FFF034C7321515F236BC4307E49B2B1019F5EF6A98" title="Message sent: 28-Jan-22 03:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">walked into that</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted39737A23F9E8AF0C7D06C9C8B596FF8BFD77D5BF8DF41702FF557FC56C87DA93" id="message-redacted39737A23F9E8AF0C7D06C9C8B596FF8BFD77D5BF8DF41702FF557FC56C87DA93" title="Message sent: 28-Jan-22 03:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">hey wanted to flag something to you</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedA252175BACF435FF209D879B954068015289BB9A1B4483ADCD55747126782080" id="message-redactedA252175BACF435FF209D879B954068015289BB9A1B4483ADCD55747126782080" title="Message sent: 28-Jan-22 03:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://workreformscandal.com/impostordms/[redacted]">[redacted]</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,255,255,255)"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://workreformscandal.com/impostordms/[redacted]">
+                                                        <div class="markdown preserve-whitespace">r/W.rk.R.frm - Comment by u/saltedhash3803188160 on ”[REDACTED: COMMENTS ABOUT COMMUNITY TRANSPARENCY]</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">[REDACTED - TONS] votes and [REDACTED - MANY] comments so far on Reddit</div>
+                                            </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedC550405C83D118A4AEF3F2AE1B41D694E3D0196F172DD997DAE41A5147491E13" id="message-redactedC550405C83D118A4AEF3F2AE1B41D694E3D0196F172DD997DAE41A5147491E13" title="Message sent: 28-Jan-22 03:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">We gotta be so careful about displaying our internals</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted002405F05643B241E3540CF3A99C7D84B40476A40CDA701BAC955A2F55EB4029" id="message-redacted002405F05643B241E3540CF3A99C7D84B40476A40CDA701BAC955A2F55EB4029" title="Message sent: 28-Jan-22 03:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">There are people champing at the bit to destroy what we're working on</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedF4BB38CAA0B373A7564623D6A38A510C7902FB309D0BC99A8C967450716E457B" id="message-redactedF4BB38CAA0B373A7564623D6A38A510C7902FB309D0BC99A8C967450716E457B" title="Message sent: 28-Jan-22 03:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">If you can, please avoid talking about our machinations internally and giving the community tools to monitor us</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/5d3530c21309c8e8de6e451e4d364346-B74B2.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"A Tough, Sturdy Animal"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 03:49 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted45D2BCDB300D9E3B2437D889DE5B9E2FEF50551C8FA495CCF28AB06014300BE8" id="message-redacted45D2BCDB300D9E3B2437D889DE5B9E2FEF50551C8FA495CCF28AB06014300BE8" title="Message sent: 28-Jan-22 03:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Yes, I think that was an intentional test</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedD6E99E3ED82A284DFCE36A9740BB84A0A608033712B40367DDEBE4E9E8EC1D65" id="message-redactedD6E99E3ED82A284DFCE36A9740BB84A0A608033712B40367DDEBE4E9E8EC1D65" title="Message sent: 28-Jan-22 03:51 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I suspect there are some rogues out there but the majority of people legitimately are just concerned because another Subreddit they really liked imploded over rogue mods.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 03:51 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted3D23F18C741B9FBA5E526AD2F9E1FCB74B06AC917C9CC725E0E1386E3D7A7FE7" id="message-redacted3D23F18C741B9FBA5E526AD2F9E1FCB74B06AC917C9CC725E0E1386E3D7A7FE7" title="Message sent: 28-Jan-22 03:51 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I get it, for sure</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedFB770299EB89337D9DFD90ECCEB55FC0FE51E016402F8ECBAAE24CBB124F8465" id="message-redactedFB770299EB89337D9DFD90ECCEB55FC0FE51E016402F8ECBAAE24CBB124F8465" title="Message sent: 28-Jan-22 03:51 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Things will calm down in time if we don't stoke the flames</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedB5C24098BE0E185B503BBA370F270F60A379BF3A30EAAF6781622E4AE699106B" id="message-redactedB5C24098BE0E185B503BBA370F270F60A379BF3A30EAAF6781622E4AE699106B" title="Message sent: 28-Jan-22 03:51 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">That is literally the only way</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted75D86A20B094A5C16BE8BA0AFC7FC7E74EE54DA8B27BF7D65411AEAFF7811552" id="message-redacted75D86A20B094A5C16BE8BA0AFC7FC7E74EE54DA8B27BF7D65411AEAFF7811552" title="Message sent: 28-Jan-22 03:51 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Transparency works in theory but the more you give, the more the bad folks out there will take</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedEF87D02B993A19AAAD361C7E9F537A7A9F7E71A5EE57ED4DE6D370FF1B4D24E9" id="message-redactedEF87D02B993A19AAAD361C7E9F537A7A9F7E71A5EE57ED4DE6D370FF1B4D24E9" title="Message sent: 28-Jan-22 03:51 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Nothing is ever enough</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted01497633AF8DF32C4F2271D96E94E21243CD594394B82EE3889249C5003EB973" id="message-redacted01497633AF8DF32C4F2271D96E94E21243CD594394B82EE3889249C5003EB973" title="Message sent: 28-Jan-22 03:51 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">So you just have to give them nothing to work with</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedB6AFB377E1692136510C5A7BD842D89B782693951D62F7B1B11990B6C7874F49" id="message-redactedB6AFB377E1692136510C5A7BD842D89B782693951D62F7B1B11990B6C7874F49" title="Message sent: 28-Jan-22 03:53 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Isn't to say that the folks who are just concerned are bad, but the ones out there who hate us will weaponize what we give them to try to keep the concerned, well, concerned</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/5d3530c21309c8e8de6e451e4d364346-B74B2.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"A Tough, Sturdy Animal"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 05:27 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted2AA20CD09B5CB7BEB8A0188FF5E39701F5CFEBEB4ACEA5F28084CFF0150877E0" id="message-redacted2AA20CD09B5CB7BEB8A0188FF5E39701F5CFEBEB4ACEA5F28084CFF0150877E0" title="Message sent: 28-Jan-22 05:27 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Okay logging off for a bit. I did want to make one note before I left: There are a few mods on the sub that I think have hearts of gold but were not involved with [BERNIE_SUB]. I think it's important we try to be inclusive of them and avoid making them feel like we've steamrolled ahead without them, which would be one of the very things pro-worker movements tend to be fighting against. I don't want all of this to come across as a subreddit getting co-opted or stolen, it's just drama that we don't want or need and can probably easily avoid.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 05:27 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedEF5D20992E2832437222A5D03407A739DEE8FB4210711283889047FAA3A62FDC" id="message-redactedEF5D20992E2832437222A5D03407A739DEE8FB4210711283889047FAA3A62FDC" title="Message sent: 28-Jan-22 05:27 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Yeah the goal is to whip everyone into tip top shape. Some mods don't have any experience at all. None of us have any experience with something of this scope.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redactedF78DD4C4026F87F7DA3369E52F665B33DE49037F856E8B7B414D054CFFB2D734" id="message-redactedF78DD4C4026F87F7DA3369E52F665B33DE49037F856E8B7B414D054CFFB2D734" title="Message sent: 28-Jan-22 05:28 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Even the wildest days at [BERNIE_SUB] don't touch this shit</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted1FF5CD2C0BC6653E0E08AC91B96C49C344B6EAB6A89204BC21394C1063B4CC8F" id="message-redacted1FF5CD2C0BC6653E0E08AC91B96C49C344B6EAB6A89204BC21394C1063B4CC8F" title="Message sent: 28-Jan-22 05:28 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">doesn't hold a candle to it</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted52E7EA14B2844E1228BD497E9E17BBF51BE4E08D6D76AE106F7017082348D423" id="message-redacted52E7EA14B2844E1228BD497E9E17BBF51BE4E08D6D76AE106F7017082348D423" title="Message sent: 28-Jan-22 05:28 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">The best thing that we can all do is defend against burnout. Protect one another. Lean in when you have time, step back when you are fried.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/5d3530c21309c8e8de6e451e4d364346-B74B2.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"A Tough, Sturdy Animal"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 05:29 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedB8FAD7B4E28F730433F4E58C22E80AEBD3ADB7397AC2C482C99DF72ACE78F7DF" id="message-redactedB8FAD7B4E28F730433F4E58C22E80AEBD3ADB7397AC2C482C99DF72ACE78F7DF" title="Message sent: 28-Jan-22 05:29 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I agree with all of that. And that's why I'm pushing that we be very careful to be inclusive with the others to make them feel they are part of the team too.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">28-Jan-22 05:30 PM</span>
+
+            <div class="chatlog__message " data-message-id="redacted97015E13900246CA6E330A1B18F7EFCCCB05CBBA40C073BA05FE7452C0EA40C9" id="message-redacted97015E13900246CA6E330A1B18F7EFCCCB05CBBA40C073BA05FE7452C0EA40C9" title="Message sent: 28-Jan-22 05:30 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I hear you</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted68D65693EA1A175CDF7DD0332314CC03C89F41A7C86216DE134073DD3710D60C" id="message-redacted68D65693EA1A175CDF7DD0332314CC03C89F41A7C86216DE134073DD3710D60C" title="Message sent: 28-Jan-22 05:30 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">it is top of mind for me</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="redacted483D55570DE0ED11FE34F39B4CBCD8AA119AE1FEFDE30388C696217A8DFA84FD" id="message-redacted483D55570DE0ED11FE34F39B4CBCD8AA119AE1FEFDE30388C696217A8DFA84FD" title="Message sent: 28-Jan-22 05:31 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Thank you for flagging and sticking your neck out</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="white_check_mark">
+                                <img class="emoji emoji--small" alt="✅" src="./dmsbackup_files/2705-75533.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+            <div class="chatlog__message " data-message-id="redacted00926046DBE897AACC746529908235F8FBCDEAEAAFEF96D5D7C110CFF3DB9133" id="message-redacted00926046DBE897AACC746529908235F8FBCDEAEAAFEF96D5D7C110CFF3DB9133" title="Message sent: 28-Jan-22 05:31 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">It is an honor to work with you.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./dmsbackup_files/a286f1cdc8f7ee4ab3ee54721dfc5bb0-88660.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="[REDACTED]" data-user-id="[REDACTED]" style="[REDACTED]">"Look At Me, I'm The Captain Now"</span>
+
+
+        <span class="chatlog__timestamp">30-Jan-22 03:54 PM</span>
+
+            <div class="chatlog__message " data-message-id="redactedB777A400C4C8BE82C5EE69676DD57070582F3292A181D3B2FF90A9FAD040839D" id="message-redactedB777A400C4C8BE82C5EE69676DD57070582F3292A181D3B2FF90A9FAD040839D" title="Message sent: 30-Jan-22 03:54 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Hey, I wanted to privately say a few things. The past couple days, you have argued with everything I've tried to communicate. I am a bit surprised by this, as you were the one who brought me in to fix the most glaring problems with [LABOR] reform. The guidelines ["Not Us, Me"] and I have established did just that.
+
+You're a mod with us on [BERNIE_SUB] and [PROGRESSIVE_SUB], so I am a bit surprised that you don't seem to understand the way we operate. Those modteams aren't a democracy. It's a project headed by ["Not Us, Me"] and myself in close collaboration with a handful of our friends. When [LABOR]reform was handed to us, it became a part of that project.
+
+So I am sorry if it makes you uncomfortable, but ["Not Us, Me"] and I will absolutely act as a hand on the kill switch if this team goes astray. We will do this because we are experienced and know how to avoid basic mistakes and because it is our project to run.
+
+If that is not agreeable to you, then I'm afraid this is where we part ways.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+</body></html>
